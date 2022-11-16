@@ -12,17 +12,17 @@ const initialState = {
 
 
 const postSlice = createSlice({
-    name: "post",
+    name: "posts",
     initialState,
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.pending, (state, action) => {
             state.loading = true;
-            state.error = "1";
+            state.error = "Pending";
         });
 
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             state.loading = false;
-            state.error = "2";
+            state.error = "fulfilled";
             state.posts = action.payload;
         });
 
